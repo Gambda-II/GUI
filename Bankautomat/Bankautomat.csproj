@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BankautomatPNG.png" />
+    <None Remove="Karte.jpg" />
+    <None Remove="Karte.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="BankautomatPNG.png" />
+    <Resource Include="Karte.png" />
+  </ItemGroup>
+
+</Project>

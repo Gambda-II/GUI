@@ -1,0 +1,32 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Industrieanlage"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Name="wndAnlage" x:Class="Industrieanlage.MainWindow"
+        mc:Ignorable="d"
+        Title="Name der Anlage - ID der Anlage" Height="450" Width="800">
+    <Grid x:Name="grdAnlage" HorizontalAlignment="Left" VerticalAlignment="Top" ShowGridLines="True" Width="800" Height="450" >
+        <Canvas x:Name="cnvKomponenten" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Height="450">
+            <Label x:Name="lblKomponente" Content="Name der Anlage" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50,50,50,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontSize="20" FontWeight="Bold"/>
+            <ListBox x:Name="lbKomponente" Height="200" Width="230" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="50,100,50,0" FontSize="15" SelectionChanged="lbKomponente_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+            <Canvas x:Name="cnvAendern" Height="200" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,100,50,0" Background="White">
+                <Image x:Name="imgAendern" Height="200" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="0" Canvas.Top="0"/>
+            </Canvas>
+            <Button x:Name="btnLoeschen" Content="Löschen" Width="90" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="55,350,0,0" Click="btnLoeschen_Click" IsEnabled="False" FontSize="20" FontWeight="Bold"/>
+            <Button x:Name="btnAendern" Content="Ändern" Width="90" Height="40" Canvas.Left="50" Canvas.Top="350" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="105,0,40,0" Click="btnAendern_Click" IsEnabled="False" FontSize="20" FontWeight="Bold"/>
+            <Label x:Name="lblAnlagewert" Content="Anlagewert" Height="30" Canvas.Left="50" Canvas.Top="310" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="tbxAnlagwert" Height="30" Canvas.Left="160" TextWrapping="Wrap" Text="0,00 €" Canvas.Top="310" Width="90" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextAlignment="Right" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" IsHitTestVisible="False" Focusable="False"/>
+        </Canvas>
+        <Canvas x:Name="cnvNeueKomponente" Height="450" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="lblNeueKomponente" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="50" Canvas.Top="50" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Neue Komponente"/>
+            <ComboBox x:Name="cmbNeueKomponente" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Canvas.Left="50" Canvas.Top="100" MaxDropDownHeight="200" VerticalContentAlignment="Center" SelectionChanged="cmbNeueKomponente_SelectionChanged">
+                <System:String>Neue Komponente</System:String>
+            </ComboBox>
+            <Button x:Name="btnNeueKomponente" Content="Hinzufügen" Height="50" Canvas.Left="50" Canvas.Top="350" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" IsEnabled="False" Click="btnNeueKomponente_Click"/>
+        </Canvas>
+        <Canvas x:Name="cnvBearbeiten" Height="450" Width="300" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
+
