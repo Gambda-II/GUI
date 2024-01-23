@@ -1,5 +1,7 @@
 ﻿
 using System.Globalization;
+using System.Numerics;
+using System.Text;
 using System.Windows.Markup;
 
 namespace Bankautomat;
@@ -13,8 +15,8 @@ internal class Card
 
     public Card()
     {
-        CardID = CreateRandomID();
-        PIN = CreateRandomPin();
+        CardID = SimulateCreatingRandomID();
+        PIN = SimulateCreatingRandomPin();
         Balance = CreateRandomBalance();
     }
 
@@ -26,7 +28,7 @@ internal class Card
     }
 
 
-    private string CreateRandomPin()
+    private string SimulateCreatingRandomPin()
     {
         string pin = "";
         for( int i = 0; i < 4; i++)
@@ -37,18 +39,25 @@ internal class Card
         return pin;
     }
 
-    private int CreateRandomID()
+    private int SimulateCreatingRandomID()
     {
-        string id = "";
+        
+        StringBuilder id = new StringBuilder("");
+        int minimumValue = 100;
+        int maximumValue = 1000;
+
+        Random random = new Random(123);
+
         for (int i = 0; i < 3; i++)
         {
-
-            int digitsOfThree = new Random().Next(100, 1000);
-            id += digitsOfThree.ToString("000");
-
+            int digitsOfThree = random.Next(minimumValue, maximumValue + 1);  
+            id.Append(digitsOfThree);
         }
 
-        return int.Parse(id);
+        int returnInteger;
+        bool parseWorked = int.TryParse(id.ToString(), out returnInteger);
+
+        return parseWorked ? returnInteger : 123456789;
     }
 
     public string SubtractFromBalance(decimal value)

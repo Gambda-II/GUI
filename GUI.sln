@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Industrieanlage", "Industri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafeGUI", "..\GUII\CafeGUI.csproj", "{07939C0F-4CC9-4FF6-A4B9-5A7A699B98A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankautomat", "Bankautomat\Bankautomat.csproj", "{716AA941-9E7F-4F54-B92D-CC26583D62D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bankautomat", "Bankautomat\Bankautomat.csproj", "{716AA941-9E7F-4F54-B92D-CC26583D62D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncProgramming", "AsyncProgramming\AsyncProgramming.csproj", "{EE3B969F-1046-42C9-85A5-5C78637ED4A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncProgramming", "AsyncProgramming\AsyncProgramming.csproj", "{EE3B969F-1046-42C9-85A5-5C78637ED4A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
